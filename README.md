@@ -1,13 +1,13 @@
 <div align="center">
 
 ```
-                        ╔══════════════════════════════════════════════════════════════════════╗
+╔══════════════════════════════════════════════════════════════════════╗
                                                                        
-                                   🏥  MEDICAL DIAGNOSIS EXPERT SYSTEM  v1.0                     
+             🏥  MEDICAL DIAGNOSIS EXPERT SYSTEM  v1.0                     
 
-                          Knowledge-Based Reasoning  ×  Machine Learning
+Knowledge-Based Reasoning  ×  Machine Learning
 
-                        ╚══════════════════════════════════════════════════════════════════════╝
+╚══════════════════════════════════════════════════════════════════════╝
 ```
 
 <br/>
@@ -96,17 +96,17 @@ It's not just a lookup table. It *reasons* — the same way a real expert system
 
 ```
                     ┌──────────────────────────┐
-                    │    Patient Symptoms       │
-                    │  (fever, cough, fatigue)  │
+                    │    Patient Symptoms      │
+                    │  (fever, cough, fatigue) │
                     └────────────┬─────────────┘
                                  │
-                    ┌────────────▼─────────────┐
+                    ┌────────────▼──────────────┐
                     │      Knowledge Base       │
                     │  10 diseases × rules +    │
                     │  required & optional syms │
                     └──────┬──────────┬─────────┘
                            │          │
-              ┌────────────▼──┐    ┌──▼────────────────┐
+              ┌────────────▼──┐    ┌──▼─────────────────┐
               │  Rule-Based   │    │   Naive Bayes ML   │
               │    Engine     │    │    Classifier      │
               │               │    │                    │
@@ -120,22 +120,22 @@ It's not just a lookup table. It *reasons* — the same way a real expert system
                      │   60%        40%   │
                      └──────────┬─────────┘
                                 │
-                   ┌────────────▼─────────────┐
+                   ┌────────────▼──────────────┐
                    │      Hybrid Fusion        │
                    │                           │
                    │  Score = 0.6×Rule +       │
                    │          0.4×ML_Prob      │
-                   └────────────┬─────────────┘
+                   └────────────┬──────────────┘
                                 │
-                   ┌────────────▼─────────────┐
+                   ┌────────────▼──────────────┐
                    │    Ranked Diagnosis       │
                    │                           │
                    │  #1 Disease — 87.4%  🔴   │
                    │  #2 Disease — 61.2%  🟡   │
                    │  #3 Disease — 34.0%  🟢   │
                    │                           │
-                   │  + Medical Advice         │
-                   └──────────────────────────┘
+                   │   + Medical Advice        │
+                   └───────────────────────────┘
 ```
 
 <br/>
@@ -213,14 +213,14 @@ Training data is auto-generated from the Knowledge Base — each disease produce
 The full system is an **Expert System** with all three classical components:
 
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌──────────────────┐
-│  Knowledge Base │    │ Inference Engine │    │  User Interface  │
-│                 │    │                 │    │                  │
-│ • Disease rules │───▶│ • Forward chain │───▶│ • CLI menu       │
-│ • Symptom maps  │    │ • Hybrid fusion │    │ • Demo mode      │
-│ • Severity info │    │ • Ranking logic │    │ • Explanation    │
-│ • Medical advice│    │ • ML + Rules    │    │ • Advice output  │
-└─────────────────┘    └─────────────────┘    └──────────────────┘
+┌──────────────────┐      ┌────────────────────┐      ┌──────────────────┐
+│  Knowledge Base  │      │ Inference Engine   │      │  User Interface  │
+│                  │      │                    │      │                  │
+│ • Disease rules  │───▶│ • Forward chain     │───▶│ • CLI menu       │
+│ • Symptom maps   │      │ • Hybrid fusion    │      │ • Demo mode      │
+│ • Severity info  │      │ • Ranking logic    │      │ • Explanation    │
+│ • Medical advice │      │ • ML + Rules       │      │ • Advice output  │
+└──────────────────┘      └────────────────────┘      └──────────────────┘
 ```
 
 <br/>
@@ -341,8 +341,8 @@ Returns probability distribution over all 10 diseases.
 ```
 ╔══════════════════════════════════════════════════════╗
 ║                                                      ║
-║   Hybrid Score = 0.6 × Rule_Confidence              ║
-║                + 0.4 × ML_Probability               ║
+║   Hybrid Score = 0.6 × Rule_Confidence               ║
+║                + 0.4 × ML_Probability                ║
 ║                                                      ║
 ╚══════════════════════════════════════════════════════╝
 ```
@@ -450,12 +450,13 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='repla
 ## 🖥️ Sample Output
 
 ```
-╔══════════════════════════════════════════════════════════════════╗
-║        🏥  MEDICAL DIAGNOSIS EXPERT SYSTEM  v1.0               ║
+╔═════════════════════════════════════════════════════════════════╗
 ║        Knowledge-Based + Machine Learning Hybrid                ║
-╠══════════════════════════════════════════════════════════════════╣
+╠═════════════════════════════════════════════════════════════════║
+║        🏥  MEDICAL DIAGNOSIS EXPERT SYSTEM  v1.0                ║
+╠═════════════════════════════════════════════════════════════════╣
 ║  ⚠️  DISCLAIMER: For educational purposes only.                 ║
-╚══════════════════════════════════════════════════════════════════╝
+╚═════════════════════════════════════════════════════════════════╝
 
   🔄  Training ML model from knowledge base...
   ✅  Model ready!
@@ -488,17 +489,17 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='repla
 
   [2] Flu  🟡 MODERATE
       ┌─────────────────────────────────────────┐
-      │  Hybrid Score  :  38.2%               │
+      │  Hybrid Score  :  38.2%                 │
       │  Rule Engine   :  57.1%  ✅ Rule Matched│
-      │  ML (Naive Bayes):  32.0%              │
+      │  ML (Naive Bayes):  32.0%               │
       └─────────────────────────────────────────┘
       💊 Advice: Rest, stay hydrated, take paracetamol.
 
   [3] Common Cold  🟢 MILD
       ┌─────────────────────────────────────────┐
-      │  Hybrid Score  :  12.4%               │
-      │  Rule Engine   :   0.0%  🤖 ML Predicted│
-      │  ML (Naive Bayes):  18.1%              │
+      │  Hybrid Score  :  12.4%                 │
+      │  Rule Engine   :   0.0%  🤖 MLPredicted│
+      │  ML (Naive Bayes):  18.1%               │
       └─────────────────────────────────────────┘
       💊 Advice: Rest, warm fluids, vitamin C.
 ```
@@ -579,7 +580,7 @@ Module 6 — main()                  (lines ~290–end)
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                                                                 │
-│   This project is built for EDUCATIONAL PURPOSES ONLY.         │
+│   This project is built for EDUCATIONAL PURPOSES ONLY.          │
 │                                                                 │
 │   It is NOT a medical device, NOT a clinical tool, and          │
 │   should NEVER be used to make real health decisions.           │
